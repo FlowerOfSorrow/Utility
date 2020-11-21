@@ -27,8 +27,7 @@ int main(int argc, char *argv[]){
 		int res;
 		_res >> res;
 		vector<string> bad;
-		string t;
-		while(badin >> t) bad.push_back(t);
+		for(string t; badin >> t; bad.push_back(t));
 		cout << "Case #" << i << "\n";
 		cout << sol << ": " << duration<double>(p2 - p1).count() << " seconds" << endl;
 		if(!res || duration<double>(p2 - p1).count() > TIME_LIMIT){

@@ -25,9 +25,8 @@ int main(int argc, char *argv[]){
 		auto p3 = high_resolution_clock::now();
 		ifstream goodin("./stress/out_good"), badin("./stress/out_bad");
 		vector<string> good, bad;
-		string t;
-		while(goodin >> t) good.push_back(t);
-		while(badin >> t) bad.push_back(t);
+		for(string t; goodin >> t; good.push_back(t));
+		for(string t; badin >> t; bad.push_back(t));
 		cout << "Case #" << i << "\n";
 		cout << sol_A << ": " << duration<double>(p2 - p1).count() << " seconds\n";
 		cout << sol_B << ": " << duration<double>(p3 - p2).count() << " seconds" << endl;
