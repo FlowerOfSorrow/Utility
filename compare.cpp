@@ -16,7 +16,7 @@ int main(int argc, char *argv[]){
 	cout.flush();
 	char X;
 	cin >> X;
-	for(int i = 0; ; ++ i){
+	for(auto i = 0; ; ++ i){
 		check_status(system("./gen>./in"), "Generator");
 		auto p1 = high_resolution_clock::now();
 		check_status(system(("./" + sol_A + "<./in>./stress/out_good").c_str()), sol_A);
